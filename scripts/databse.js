@@ -34,38 +34,34 @@ let dishes = [
         "description": "mit hausgemachter Fleischsauce",
         "price": '10.99',
     },
-
-
-
-    ,
     {
-        "name": "Pizza Diablo",
-        "description": "mit Salami und Peperoni",
-        "price": '12.99',
+        "name": "Pizza Brötchen",
+        "description": "Standart",
+        "price": '3.99',
     },
     {
-        "name": "Pizza Thunfisch",
-        "description": "mit Thunfisch und Zwiebeln",
-        "price": '11.99',
+        "name": "Pizza Brötchen",
+        "description": "Gefüllt nach Wahl",
+        "price": '6.99',
     },
     {
-        "name": "Tortellini alla Pana",
-        "description": "mit Vorderschinken und Sahnesauce",
-        "price": '12.99',
+        "name": "Pommes",
+        "description": "mit Mayo oder Ketchup",
+        "price": '2.99',
     },
     {
-        "name": "Tortellini al Forno",
-        "description": "mit Fleischsauce, Sahne, Vorderschinken",
-        "price": '11.99',
+        "name": "Chicken Nuggets",
+        "description": "Hausgemachte Chicken Nuggets",
+        "price": '6.99',
     },
     {
-        "name": "Gnochi Napoli",
-        "description": "mit Tomatensauce und Mozarella überbacken",
-        "price": '9.99',
+        "name": "Wasser",
+        "description": "1L Flasche",
+        "price": '3.99',
     },
     {
-        "name": "Gnochhi Bolognese",
-        "description": "mit hausgemachter Fleischsauce",
-        "price": '10.99',
+        "name": "Cola Fanta Sprite",
+        "description": "0.75L Flasche",
+        "price": '4.99',
     },
 ]

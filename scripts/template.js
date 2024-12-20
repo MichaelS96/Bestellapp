@@ -10,8 +10,7 @@ function generateRestaurantInfo() {
             </div>
         </div>
         <div class="menu-categories">
-            <span class="category active">Hauptgerichte</span>
-            <span class="category">Beilage</span>
+            <span>Hauptgerichte / Beilagen / Getränke</span>
         </div>
     </div>`;
 }
