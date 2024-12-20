@@ -1,23 +1,85 @@
 body {
     margin: 0;
-    background-color: #242E49;
+    height: 100vh;
+    background-color: white;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    padding: 15px 0 15px 25px;
-}
-
-.logo-header {
-    width: 120px;
-}
-
-.headline {
-    font-size: 46px;
+h1 {
+    margin: 0;
+    font-size: 44px;
     color: white;
 }
 
 .navbar {
+    background-color: #FF7F32;
+    padding: 20px;
+}
+
+.header .logo-header {
+    height: 50px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.content {
+    flex: 1;
+    background-color: #FF7F32;
+    padding: 20px;
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
+.under-header {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    background-image: url(assets/img/pizza.jpg);
+    height: 250px;
+    background-size: 100%;
+}
+
+.text-overlay {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding-top: 75px;
+}
+
+.restaurant-name,
+.rating {
+    margin: 0 0 5px 10px;
+    padding: 5px;
+    background-color: #FF7F32;
+    border-radius: 10px;
+}
+
+.menu-categories {
+    font-size: 24px;
+    margin: 25px 0 25px 0;
+    padding: 10px 10px 10px 10px;
+    border-radius: 8px;
+    color: white;
     background-color: orange;
+}
+
+footer {
+    height: 75px;
+    background-color: #FF7F32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
 }

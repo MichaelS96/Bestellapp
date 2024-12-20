@@ -1,0 +1,31 @@
+.dish-card {
+    background-color: orange;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.dish-header {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dish-info p {
+    margin: 5px 0;
+    color: black;
+    font-size: 24px;
+}
+
+.separator {
+    height: 1px;
+    background-color: #fff;
+    margin: 10px 0;
+}
+
+.add-button {
+    height: 24px;
+    cursor: pointer;
+}
