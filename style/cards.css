@@ -5,10 +5,14 @@
     border-radius: 8px;
 }
 
+.dish-card:hover{
+    transform: scale(1.02);
+    transition-duration: 225ms;
+}
+
 .dish-header {
     font-size: 36px;
     color: #fff;
-    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
 }

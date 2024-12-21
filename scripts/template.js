@@ -18,7 +18,9 @@ function generateRestaurantInfo() {
 function generateDishCard(dish, i) {
     return `
     <div class="dish-card">
-        <div class="dish-header">${dish.name} <img class="add-button" src="./assets/button/plus.png"></div>
+        <div class="dish-header">${dish.name} 
+            <img class="add-button" src="./assets/button/plus.png" onclick="addToBasket(${i})">
+        </div>
         <div class="separator"></div>
         <div class="dish-info">
             <p><strong>Zutaten:</strong> ${dish.description}</p>
@@ -31,3 +33,22 @@ function generateDishCards(dishes) {
     const dishCards = dishes.map((dish, i) => generateDishCard(dish, i)).join('');
     return `<div class="food-container">${dishCards}</div>`;
 }
+
+/*
+function addToBasket(index) {
+    const dish = dishes[index];
+    const basket = document.getElementById('basket');
+    const basketItem = document.createElement('div');
+    basketItem.className = 'basket-item';
+    basketItem.innerHTML = `
+        <span>${dish.name}</span> - 
+        <span>${dish.price}€</span>
+        <div>
+        <span><img class="busket-minus" src="./assets/button/minus-basket.jpg"></span>
+        <span><img class="busket-plus" src="./assets/button/plus-basket.jpg"></span>  
+        <span>1</span>
+        </div>    
+    `;
+    basket.appendChild(basketItem);
+} */
+
