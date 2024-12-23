@@ -4,11 +4,12 @@
     padding: 20px;
     border-radius: 10px;
     color: white;
+    overflow-y: auto;
 }
 
 #basket {
     background-color: orange;
-    border-radius: 5px;   
+    border-radius: 5px;
     position: sticky;
     top: 10px;
     display: flex;
@@ -23,44 +24,56 @@
     text-align: center;
     padding: 10px;
     background-color: white;
-    color: black;
+    color: white;
     border-radius: 5px;
+    background-color: orange;
 }
 
 .basket-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
     background-color: white;
     color: black;
     padding: 20px;
     border-radius: 5px;
     font-size: 24px;
+    margin-top: 5px;
 }
 
 .basket-item span {
     margin: 0 3px;
 }
 
-.basket-item {
+.busket-plus {
+    width: 16px;
+    height: 16px;
+}
+
+.busket-minus {
+    width: 16px;
+    height: 16px;
+}
+
+.add-busket {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: white;
-    color: black;
-    padding: 20px;
-    border-radius: 5px;
+}
+
+.basket-summary {
     font-size: 24px;
 }
 
-.basket-item div{
-    display: flex;
+.order-button {
+    height: 50px;
+    background-color: orange;
+    border-color: white;
+    color: white;
+    font-size: 50%;
 }
 
-.busket-plus{
-    width: 16px;
-}
-
-.busket-minus{
-    width: 16px;
+.order-button:hover {
+    transform: scale(1.05);
+    transition-duration: 225ms;
 }

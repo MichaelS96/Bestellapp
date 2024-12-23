@@ -38,10 +38,16 @@
             <div id="food-container"></div>
         </section>
         <section class="basket-wrapper">
-            <div id="basket">
-                <div>Warenkorb</div>
+            <div id="basket" class="basket-container">
+                <div class="basket-title">Warenkorb</div>
+                <div id="basket-items"></div>
+                <div class="basket-summary">
+                    <p>Zwischensumme: <span id="subtotal">0.00€</span></p>
+                    <p>Lieferkosten: <span id="delivery-cost">5.00€</span></p>
+                    <p>Gesamt: <span id="total">5.00€</span></p>
+                </div>
+                <button id="order-button" class="order-button">Bestellung abschicken</button>
             </div>
-            
         </section>
     </div>
 </body>
