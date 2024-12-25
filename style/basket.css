@@ -5,6 +5,10 @@
     border-radius: 10px;
     color: white;
     overflow-y: auto;
+    position: sticky;
+    top: 5px;
+    margin-left: 5px;
+    height: 95vh;
 }
 
 #basket {
@@ -55,10 +59,19 @@
     height: 16px;
 }
 
+.busket-trash {
+    height: 18px;
+
+}
+
 .add-busket {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 10px;
+}
+
+.add-busket img{
+    cursor: pointer;
 }
 
 .basket-summary {

@@ -10,16 +10,18 @@ function generateRestaurantInfo() {
             </div>
         </div>
         <div class="menu-categories">
-            <span>Hauptgerichte / Beilagen / Getränke</span>
+            <a href="#main-dishes">Hauptgerichte</a> / 
+            <a href="#sides">Beilagen</a> / 
+            <a href="#drinks">Getränke</a>
         </div>
     </div>`;
 }
 
-function generateDishCard(dish, i) {
+function generateDishCard(dish, categoryIndex, dishIndex) {
     return `
     <div class="dish-card">
         <div class="dish-header">${dish.name} 
-            <img class="add-button" src="./assets/button/plus.png" onclick="addToBasket(${i})">
+            <img class="add-button" src="./assets/button/plus.png" onclick="addToBasket(${categoryIndex}, ${dishIndex})">
         </div>
         <div class="separator"></div>
         <div class="dish-info">
@@ -29,7 +31,20 @@ function generateDishCard(dish, i) {
     </div>`;
 }
 
-function generateDishCards(dishes) {
-    const dishCards = dishes.map((dish, i) => generateDishCard(dish, i)).join('');
-    return `<div class="food-container">${dishCards}</div>`;
+// Hinzufügen eines neuen Artikels zum Warenkorb
+function addNewItemToBasket(basket, dish) {
+    const basketItem = document.createElement('div');
+    basketItem.className = 'basket-item';
+    basketItem.innerHTML = `
+        <span>${dish.name}</span> 
+        <span>${dish.price}€</span>
+        <div class="add-busket">
+        <img class="busket-trash" src="./assets/button/trash-busket.png" onclick="removeItemFromBasket(this)">    
+        <img class="busket-minus" src="./assets/button/minus-basket.jpg" onclick="updateItemQuantity(this, -1)">
+            <img class="busket-plus" src="./assets/button/plus-basket.jpg" onclick="updateItemQuantity(this, 1)">
+            <span>1</span>
+        </div>
+    `;
+    basket.appendChild(basketItem);
 }
+
