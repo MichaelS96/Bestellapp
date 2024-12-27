@@ -40,6 +40,7 @@
         <section class="basket-wrapper">
             <div id="basket" class="basket-container">
                 <div class="basket-title">Warenkorb</div>
+                <div class="mobile-close-button" onclick="closeBasket()">×</div>
                 <div id="basket-items"></div>
                 <div class="basket-summary">
                     <p>Zwischensumme: <span id="subtotal">0.00€</span></p>
@@ -50,6 +51,7 @@
                 <p class="order-message"></p>
             </div>
         </section>
+        <button id="show-basket-button" class="show-basket-button" onclick="toggleBasket()">Warenkorb anzeigen</button>
     </div>
 
     <footer>Design by Michael</footer>

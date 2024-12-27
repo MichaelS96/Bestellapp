@@ -9,57 +9,6 @@ function init() {
     updateBasketSummary();
 }
 
-function renderMainDishes() {
-    const container = document.createElement('div');
-    container.id = 'main-dishes';
-    container.className = 'food-container';
-
-    const header = document.createElement('h2');
-    header.innerText = 'Hauptgerichte';
-    container.appendChild(header);
-
-    Hauptgerichte.forEach((dish, index) => {
-        const dishCard = generateDishCard(dish, 0, index); // categoryIndex = 0
-        container.innerHTML += dishCard;
-    });
-
-    document.getElementById('food-container').appendChild(container);
-}
-
-function renderSides() {
-    const container = document.createElement('div');
-    container.id = 'sides';
-    container.className = 'food-container';
-
-    const header = document.createElement('h2');
-    header.innerText = 'Beilagen';
-    container.appendChild(header);
-
-    beilagen.forEach((dish, index) => {
-        const dishCard = generateDishCard(dish, 1, index); // categoryIndex = 1
-        container.innerHTML += dishCard;
-    });
-
-    document.getElementById('food-container').appendChild(container);
-}
-
-function renderDrinks() {
-    const container = document.createElement('div');
-    container.id = 'drinks';
-    container.className = 'food-container';
-
-    const header = document.createElement('h2');
-    header.innerText = 'Getränke';
-    container.appendChild(header);
-
-    getränke.forEach((dish, index) => {
-        const dishCard = generateDishCard(dish, 2, index); // categoryIndex = 2
-        container.innerHTML += dishCard;
-    });
-
-    document.getElementById('food-container').appendChild(container);
-}
-
 function addToBasket(categoryIndex, dishIndex) {
     let dish;
 
@@ -79,7 +28,10 @@ function addToBasket(categoryIndex, dishIndex) {
     } else {
         addNewItemToBasket(basket, dish);
     }
+
+    // Update beide Warenkörbe, um sicherzustellen, dass sie synchronisiert sind
     updateBasketSummary();
+    updateMobileBasket();
 }
 
 function findExistingBasketItem(basket, dishName) {
@@ -96,6 +48,21 @@ function findExistingBasketItem(basket, dishName) {
 function increaseItemCounter(existingBasketItem) {
     const counterSpan = existingBasketItem.querySelector('div span:last-child');
     counterSpan.innerText = parseInt(counterSpan.innerText, 10) + 1;
+}
+
+function placeOrder() {
+    const basket = document.getElementById('basket-items'); // Korrektes Element mit der ID
+    basket.innerHTML = ''; // Entfernt alle Warenkorbeinträge aus dem DOM
+
+    const subtotalElement = document.getElementById('subtotal');
+    const deliveryCostElement = document.getElementById('delivery-cost');
+    const totalElement = document.getElementById('total');
+
+    if (subtotalElement) subtotalElement.innerText = '0.00€';     // Zwischensumme auf 0.00€
+    if (deliveryCostElement) deliveryCostElement.innerText = '5.00€'; // Lieferkosten bleiben konstant
+    if (totalElement) totalElement.innerText = '5.00€';           // Gesamt auf Lieferkosten zurücksetzen
+
+    document.querySelector('.order-message').innerText = "Vielen Dank für Ihre Bestellung";
 }
 
 function updateBasketSummary() {
@@ -116,6 +83,8 @@ function updateBasketSummary() {
     document.getElementById('subtotal').innerText = `${subtotal.toFixed(2)}€`;
     document.getElementById('delivery-cost').innerText = `${deliveryCost.toFixed(2)}€`;
     document.getElementById('total').innerText = `${total.toFixed(2)}€`;
+
+    updateMobileBasket(); // Synchronisiere auch den mobilen Warenkorb
 }
 
 function removeItemFromBasket(button) {
@@ -134,3 +103,37 @@ function updateItemQuantity(button, change) {
     }
     updateBasketSummary();
 }
+
+function toggleBasket() {
+    const basketWrapper = document.querySelector('.basket-wrapper');
+    const foodContainer = document.getElementById('food-container');
+    const showBasketButton = document.getElementById('show-basket-button');
+
+    // Wenn der Warenkorb aktuell ausgeblendet ist, zeige ihn an und ändere den Food-Container
+    if (basketWrapper.style.display === 'none' || !basketWrapper.style.display) {
+        basketWrapper.style.display = 'block';  // Zeige den Warenkorb
+        showBasketButton.style.display = 'none'; // Verstecke den Button
+
+    } else {
+        // Andernfalls verstecke den Warenkorb und zeige den Button an
+        basketWrapper.style.display = 'none';
+        showBasketButton.style.display = 'block';
+    }
+}
+
+function closeBasket() {
+    const basketWrapper = document.querySelector('.basket-wrapper');
+    const foodContainer = document.getElementById('food-container');
+
+    // Verstecke den Warenkorb und stelle sicher, dass der Food-Container wieder sichtbar ist
+    basketWrapper.style.display = 'none';
+    
+    // Zeige den Button wieder an, um den Warenkorb zu öffnen
+    document.getElementById('show-basket-button').style.display = 'block';
+}
+
+function updateMobileBasket() {
+    const mobileBasket = document.getElementById('mobile-basket-items');
+    const basketItems = document.getElementById('basket-items').children;
+}
+

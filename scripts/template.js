@@ -50,17 +50,53 @@ function addNewItemToBasket(basket, dish) {
     basket.appendChild(basketItem);
 }
 
-function placeOrder() {
-    const basket = document.getElementById('basket-items'); // Korrektes Element mit der ID
-    basket.innerHTML = ''; // Entfernt alle Warenkorbeinträge aus dem DOM
+function renderMainDishes() {
+    const container = document.createElement('div');
+    container.id = 'main-dishes';
+    container.className = 'food-container';
 
-    const subtotalElement = document.getElementById('subtotal');
-    const deliveryCostElement = document.getElementById('delivery-cost');
-    const totalElement = document.getElementById('total');
+    const header = document.createElement('h2');
+    header.innerText = 'Hauptgerichte';
+    container.appendChild(header);
 
-    if (subtotalElement) subtotalElement.innerText = '0.00€';     // Zwischensumme auf 0.00€
-    if (deliveryCostElement) deliveryCostElement.innerText = '5.00€'; // Lieferkosten bleiben konstant
-    if (totalElement) totalElement.innerText = '5.00€';           // Gesamt auf Lieferkosten zurücksetzen
+    Hauptgerichte.forEach((dish, index) => {
+        const dishCard = generateDishCard(dish, 0, index); // categoryIndex = 0
+        container.innerHTML += dishCard;
+    });
 
-    document.querySelector('.order-message').innerText = "Vielen Dank für Ihre Bestellung";
+    document.getElementById('food-container').appendChild(container);
+}
+
+function renderSides() {
+    const container = document.createElement('div');
+    container.id = 'sides';
+    container.className = 'food-container';
+
+    const header = document.createElement('h2');
+    header.innerText = 'Beilagen';
+    container.appendChild(header);
+
+    beilagen.forEach((dish, index) => {
+        const dishCard = generateDishCard(dish, 1, index); // categoryIndex = 1
+        container.innerHTML += dishCard;
+    });
+
+    document.getElementById('food-container').appendChild(container);
+}
+
+function renderDrinks() {
+    const container = document.createElement('div');
+    container.id = 'drinks';
+    container.className = 'food-container';
+
+    const header = document.createElement('h2');
+    header.innerText = 'Getränke';
+    container.appendChild(header);
+
+    getränke.forEach((dish, index) => {
+        const dishCard = generateDishCard(dish, 2, index); // categoryIndex = 2
+        container.innerHTML += dishCard;
+    });
+
+    document.getElementById('food-container').appendChild(container);
 }
