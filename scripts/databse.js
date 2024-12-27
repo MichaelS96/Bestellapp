@@ -41,8 +41,8 @@ let beilagen = [{
     "price": '3.99',
 },
 {
-    "name": "Pizza Brötchen",
-    "description": "Gefüllt nach Wahl",
+    "name": "Currywurst",
+    "description": "mit Pommes",
     "price": '6.99',
 },
 {
