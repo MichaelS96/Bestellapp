@@ -29,7 +29,6 @@ function addToBasket(categoryIndex, dishIndex) {
         addNewItemToBasket(basket, dish);
     }
 
-    // Update beide Warenkörbe, um sicherzustellen, dass sie synchronisiert sind
     updateBasketSummary();
     updateMobileBasket();
 }
@@ -51,16 +50,16 @@ function increaseItemCounter(existingBasketItem) {
 }
 
 function placeOrder() {
-    const basket = document.getElementById('basket-items'); // Korrektes Element mit der ID
-    basket.innerHTML = ''; // Entfernt alle Warenkorbeinträge aus dem DOM
+    const basket = document.getElementById('basket-items');
+    basket.innerHTML = '';
 
     const subtotalElement = document.getElementById('subtotal');
     const deliveryCostElement = document.getElementById('delivery-cost');
     const totalElement = document.getElementById('total');
 
-    if (subtotalElement) subtotalElement.innerText = '0.00€';     // Zwischensumme auf 0.00€
-    if (deliveryCostElement) deliveryCostElement.innerText = '5.00€'; // Lieferkosten bleiben konstant
-    if (totalElement) totalElement.innerText = '5.00€';           // Gesamt auf Lieferkosten zurücksetzen
+    if (subtotalElement) subtotalElement.innerText = '0.00€';
+    if (deliveryCostElement) deliveryCostElement.innerText = '5.00€'; 
+    if (totalElement) totalElement.innerText = '5.00€'; 
 
     document.querySelector('.order-message').innerText = "Vielen Dank für Ihre Bestellung";
 }
@@ -77,20 +76,20 @@ function updateBasketSummary() {
         subtotal += price * quantity;
     }
 
-    const deliveryCost = 5.00; // fester Betrag für die Lieferkosten
+    const deliveryCost = 5.00;
     const total = subtotal + deliveryCost;
 
     document.getElementById('subtotal').innerText = `${subtotal.toFixed(2)}€`;
     document.getElementById('delivery-cost').innerText = `${deliveryCost.toFixed(2)}€`;
     document.getElementById('total').innerText = `${total.toFixed(2)}€`;
 
-    updateMobileBasket(); // Synchronisiere auch den mobilen Warenkorb
+    updateMobileBasket(); 
 }
 
 function removeItemFromBasket(button) {
-    const basketItem = button.closest('.basket-item'); // Finde das übergeordnete Element mit der Klasse 'basket-item'
-    basketItem.remove(); // Entferne das Element aus dem DOM
-    updateBasketSummary(); // Aktualisiere die Warenkorb-Zusammenfassung
+    const basketItem = button.closest('.basket-item'); 
+    basketItem.remove();
+    updateBasketSummary(); 
 }
 
 function updateItemQuantity(button, change) {
@@ -108,12 +107,10 @@ function toggleBasket() {
     const basketWrapper = document.querySelector('.basket-wrapper');
     const showBasketButton = document.getElementById('show-basket-button');
 
-    // Wenn der Warenkorb aktuell ausgeblendet ist, zeige ihn an
     if (basketWrapper.style.display === 'none' || !basketWrapper.style.display) {
-        basketWrapper.style.display = 'block';  // Zeige den Warenkorb
-        showBasketButton.style.display = 'none'; // Verstecke den Button
+        basketWrapper.style.display = 'block'; 
+        showBasketButton.style.display = 'none'; 
     } else {
-        // Andernfalls verstecke den Warenkorb und zeige den Button an
         basketWrapper.style.display = 'none';
         showBasketButton.style.display = 'block';
     }
@@ -123,10 +120,8 @@ function closeBasket() {
     const basketWrapper = document.querySelector('.basket-wrapper');
     const foodContainer = document.getElementById('food-container');
 
-    // Verstecke den Warenkorb und stelle sicher, dass der Food-Container wieder sichtbar ist
     basketWrapper.style.display = 'none';
     
-    // Zeige den Button wieder an, um den Warenkorb zu öffnen
     document.getElementById('show-basket-button').style.display = 'block';
 }
 

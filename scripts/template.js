@@ -60,7 +60,7 @@ function renderMainDishes() {
     container.appendChild(header);
 
     Hauptgerichte.forEach((dish, index) => {
-        const dishCard = generateDishCard(dish, 0, index); // categoryIndex = 0
+        const dishCard = generateDishCard(dish, 0, index);
         container.innerHTML += dishCard;
     });
 
@@ -77,7 +77,7 @@ function renderSides() {
     container.appendChild(header);
 
     beilagen.forEach((dish, index) => {
-        const dishCard = generateDishCard(dish, 1, index); // categoryIndex = 1
+        const dishCard = generateDishCard(dish, 1, index);
         container.innerHTML += dishCard;
     });
 
@@ -94,7 +94,7 @@ function renderDrinks() {
     container.appendChild(header);
 
     getränke.forEach((dish, index) => {
-        const dishCard = generateDishCard(dish, 2, index); // categoryIndex = 2
+        const dishCard = generateDishCard(dish, 2, index);
         container.innerHTML += dishCard;
     });
 
