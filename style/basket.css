@@ -49,17 +49,17 @@
     margin: 0 3px;
 }
 
-.busket-plus {
+.basket-plus {
     width: 16px;
     height: 16px;
 }
 
-.busket-minus {
+.basket-minus {
     width: 16px;
     height: 16px;
 }
 
-.busket-trash {
+.basket-trash {
     height: 18px;
 
 }
@@ -89,4 +89,9 @@
 .order-button:hover {
     transform: scale(1.05);
     transition-duration: 225ms;
+}
+
+.order-message{
+    color: black;
+    font-size: 40px;
 }
