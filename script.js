@@ -106,14 +106,12 @@ function updateItemQuantity(button, change) {
 
 function toggleBasket() {
     const basketWrapper = document.querySelector('.basket-wrapper');
-    const foodContainer = document.getElementById('food-container');
     const showBasketButton = document.getElementById('show-basket-button');
 
-    // Wenn der Warenkorb aktuell ausgeblendet ist, zeige ihn an und ändere den Food-Container
+    // Wenn der Warenkorb aktuell ausgeblendet ist, zeige ihn an
     if (basketWrapper.style.display === 'none' || !basketWrapper.style.display) {
         basketWrapper.style.display = 'block';  // Zeige den Warenkorb
         showBasketButton.style.display = 'none'; // Verstecke den Button
-
     } else {
         // Andernfalls verstecke den Warenkorb und zeige den Button an
         basketWrapper.style.display = 'none';

@@ -1,19 +1,3 @@
-function generateDishCard(dish, categoryIndex, dishIndex) {
-    return `
-        <div class="dish-card">
-            <div class="dish-header">
-                ${dish.name}
-                <img class="add-button" src="./assets/button/plus.png" onclick="addToBasket(${categoryIndex}, ${dishIndex})">
-            </div>
-            <div class="separator"></div>
-            <div class="dish-info">
-                <p><strong>Zutaten:</strong> ${dish.description}</p>
-                <p><strong>Preis:</strong> ${dish.price}€</p>
-            </div>
-        </div>
-    `;
-}
-
 function generateRestaurantInfo() {
     return `
         <div class="restaurant-container">
@@ -29,6 +13,22 @@ function generateRestaurantInfo() {
                 <a href="#main-dishes">Hauptgerichte</a> / 
                 <a href="#sides">Beilagen</a> / 
                 <a href="#drinks">Getränke</a>
+            </div>
+        </div>
+    `;
+}
+
+function generateDishCard(dish, categoryIndex, dishIndex) {
+    return `
+        <div class="dish-card">
+            <div class="dish-header">
+                ${dish.name}
+                <img class="add-button" src="./assets/button/plus.png" onclick="addToBasket(${categoryIndex}, ${dishIndex})">
+            </div>
+            <div class="separator"></div>
+            <div class="dish-info">
+                <p><strong>Zutaten:</strong> ${dish.description}</p>
+                <p><strong>Preis:</strong> ${dish.price}€</p>
             </div>
         </div>
     `;

@@ -116,11 +116,14 @@
     color: white;
     cursor: pointer;
     display: none;
-    /* Standardmäßig ausgeblendet */
 }
 
 @media (max-width: 756px) {
     .mobile-close-button {
+        display: block;
+    }
+
+    .show-basket-button {
         display: block;
     }
 
